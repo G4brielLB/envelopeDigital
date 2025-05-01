@@ -23,10 +23,16 @@ pip install -r requirements.txt
 Para utilizar o programa, você pode executar os seguintes comandos:
 
 Para gerar um par de chaves RSA:
+```bash
 python claude.py gerar-chaves --tamanho 2048 --privada chave_privada.pem --publica chave_publica.pem
+```
 
 Para criar um envelope digital:
+```bash
 python claude.py criar arquivo.txt --chave-publica chave_publica.pem --saida ./saida --modo CBC --formato HEX
+```
 
 Para abrir um envelope digital:
+```bash
 python claude.py abrir --mensagem ./saida/arquivo.txt.enc --chave-cifrada ./saida/arquivo.txt.key --chave-privada chave_privada.pem --saida arquivo_decifrado.txt --modo CBC --formato HEX
+```
